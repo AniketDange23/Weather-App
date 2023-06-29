@@ -40,6 +40,7 @@ text-align:center
   .search input[type="text"]{
    font-size: 18px;
    color: #696969;
+   text-transform: capitalize;
    background-color: #dfefff;
    }
    .search input[type="text"]:hover{

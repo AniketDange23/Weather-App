@@ -12,16 +12,18 @@
   <body>
     <div class="container">
       <div class="search">
-        <input type="text" id="location" placeholder="Enter location" />
-        <button><img src="/images/search.png" alt="" /></button>
+        <input type="text" id="location" tabindex="1" placeholder="Enter location" />
+        <button tabindex="13"><img src="/images/search.png" /></button>
       </div>
- <div class="error"><p>indvaild city name</p></div>
+ <div class="error">
+  <p>indvaild city name</p>
+</div>
       <div id="weather" class="weather-info">
         <!-- Weather info goes here -->
         <img src="/images/cloud.png" alt="weather-icon" class="weather-icon" />
         <!-- <h2 class="weather">Haze</h2> -->
 
-        <h1 class="temp">45°C</h1>
+        <h1 class="temp">0°C</h1>
         <h2 class="city">New Your</h2>
         <div class="weather-deteails">
           <div class="col">
@@ -47,7 +49,7 @@
       const apiUrl =
         "https://api.openweathermap.org/data/2.5/weather?units=materic&q=";
   
-const searchBox =  document.querySelector(".search input")
+const searchBox =  document.querySelector(".search input");
 const searchBtn =  document.querySelector(".search button")
 const weatherIcon = document.querySelector(".weather-icon")
 
@@ -62,7 +64,7 @@ document.querySelector(".weather-info").style.display ="none";
 
         console.log(data);
  document.querySelector(".city").innerHTML= data.name;
- document.querySelector(".temp").innerHTML= Math.round(data.main.temp) + "°C";
+ document.querySelector(".temp").innerHTML= Math.round(data.main.temp/10) + "°C";
  document.querySelector(".humidity").innerHTML= data.main.humidity + "%";
  document.querySelector(".wind").innerHTML= data.wind.speed +" km/h";
 
